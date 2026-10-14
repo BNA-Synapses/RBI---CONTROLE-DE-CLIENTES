@@ -1,0 +1,284 @@
+/* =========================================================
+   CONTROLE RBI - STYLE.CSS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6f9;
+    color: #303846;
+}
+
+main {
+    width: min(1180px, 94%);
+    margin: 32px auto;
+}
+
+h1 {
+    width: min(1180px, 94%);
+    margin: 28px auto;
+    color: #315f9d;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: #394553;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+section {
+    background: #ffffff;
+    border: 1px solid #e2e8ef;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#secao_formulario {
+    scroll-margin-top: 20px;
+}
+
+label {
+    color: #53606d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ccd5df;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #303846;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #3979c6;
+    box-shadow: 0 0 0 3px rgba(57, 121, 198, 0.12);
+}
+
+/* BUSCA */
+#busca {
+    display: block;
+    width: min(340px, 100%);
+    margin: 7px 0 22px;
+}
+
+/* FORMULÁRIO NOVA OS / EDITAR OS */
+#form_os {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 14px;
+}
+
+#form_os input {
+    min-width: 180px;
+    flex: 1;
+}
+
+#form_os select {
+    min-width: 140px;
+}
+
+.acoes-formulario {
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÕES */
+button {
+    min-height: 40px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 5px;
+    background: #3979c6;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: #2f68ad;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.btn-remover {
+    background: #b94747;
+}
+
+.btn-remover:hover {
+    background: #9f3939;
+}
+
+.oculto {
+    display: none;
+}
+
+/* PAINEL EM COLUNAS */
+.cabecalho-lista,
+.linha-cliente {
+    display: grid;
+    grid-template-columns:
+        minmax(180px, 1.5fr)
+        minmax(120px, 1fr)
+        minmax(140px, 1fr)
+        minmax(120px, 0.9fr)
+        90px;
+    align-items: center;
+    column-gap: 22px;
+}
+
+.cabecalho-lista {
+    padding: 11px 16px;
+    background: #f7f9fc;
+    border-top: 1px solid #e2e8ef;
+    border-bottom: 1px solid #dce4ec;
+    color: #657281;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#lista_clientes {
+    width: 100%;
+}
+
+.linha-cliente {
+    min-height: 58px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e7ecf1;
+    font-size: 14px;
+}
+
+.linha-cliente:hover {
+    background: #f7faff;
+}
+
+.coluna {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nome-cliente {
+    color: #26384c;
+    font-weight: 600;
+}
+
+.acao-cliente {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#lista_clientes button {
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    #form_os {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #form_os input,
+    #form_os select,
+    #form_os button,
+    .acoes-formulario {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+    }
+
+    .cabecalho-lista {
+        display: none;
+    }
+
+    .linha-cliente {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 7px;
+        margin-bottom: 12px;
+        border: 1px solid #e2e8ef;
+        border-radius: 6px;
+    }
+
+    .coluna {
+        white-space: normal;
+    }
+
+    .acao-cliente {
+        justify-content: stretch;
+    }
+
+    #lista_clientes button {
+        width: 100%;
+        margin-top: 6px;
+    }
+}
+
+
+/* BACKUP E RESTAURAÇÃO */
+.acoes-backup {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 18px;
+}
+
+.acoes-backup button {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+    .acoes-backup {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-backup button {
+        width: 100%;
+    }
+}

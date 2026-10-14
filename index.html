@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROLE RBI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Controle de clientes RBI</h1>
+
+    <main>
+        <section>
+            <h2>Painel de Ordens</h2>
+            <label for="busca">Busca</label>
+            <input type="text" id="busca" placeholder="Nome, telefone ou contrato...">
+
+            <div class="acoes-backup">
+                <button type="button" id="btn_exportar">Exportar backup</button>
+                <button type="button" id="btn_importar">Importar backup</button>
+                <input type="file" id="arquivo_backup" accept=".txt,application/json" hidden>
+            </div>
+
+            <div class="cabecalho-lista" aria-hidden="true">
+                <span>Nome</span>
+                <span>Contrato</span>
+                <span>Telefone</span>
+                <span>Status</span>
+                <span>Ação</span>
+            </div>
+
+            <div id="lista_clientes"></div>
+        </section>
+
+        <section id="secao_formulario">
+            <h2 id="titulo_formulario">NOVA OS</h2>
+
+            <form id="form_os">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome">
+
+                <label for="contrato">Contrato</label>
+                <input type="text" id="contrato">
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone">
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="novo">Novo</option>
+                    <option value="sem_resposta">Sem Resposta</option>
+                    <option value="respondido">Respondido</option>
+                    <option value="agendado">Agendado</option>
+                    <option value="coletado">Coletado</option>
+                    <option value="removido">Removido</option>
+                </select>
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="btn_cadastrar">Cadastrar OS</button>
+                    <button type="button" id="btn_remover" class="btn-remover oculto">Remover OS</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
